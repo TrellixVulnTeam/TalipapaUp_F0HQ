@@ -1,0 +1,51 @@
+.card-text {
+    font-size: 14px;
+}
+
+.button {
+    border-radius: 5px 25px;
+    width: 180px;
+    height: 50px;
+
+}
+
+.add-to-cart {
+    border-radius: 3px;
+}
+
+.buy {
+    border-radius: 8px;
+    width: 90px;
+    font-size: 14px;
+}
+.price {
+    font-size: 17px;
+}
+
+.filterbtn {
+    border-radius: 10px 5px;
+    font-size: 16px;
+    width: 100px;
+}
+
+.filter-form {
+    font-size: 16px;
+}
+
+
+.list-text {
+    font-size:  12px;
+}
+
+.searchholder {
+    font-size: 10px;
+}
+
+.searchbar {
+    border-radius: 20px;
+}
+
+.authenticity{
+    font-family: 'Arial';
+    font-size: 13px;
+}

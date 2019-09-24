@@ -1,0 +1,60 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+      <link rel='stylesheet' type = "text/css" href = "{% static 'css/style.css' %}">
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>{% block title %} TalipapaUp | Online Palengke {% endblock %}</title>
+  </head> 
+
+  <body>
+        <header>
+            {% include "navbar.html" %} 
+        </header>
+      
+        {% block content %}
+        {% endblock %}
+      <br>
+      <br>
+      <br>
+    <footer>
+    <div class="card-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <ul class="list-group">
+                        <a href="{% url 'products:homepage' %}" class="text-muted">Customer Care</a>
+                        <a href="" class="text-muted">How To Order</a>
+                        <a href="" class="text-muted">Shipping Delivery</a>
+                        <a href="" class="text-muted">Returning Of Products</a>
+                        <a href="" class="text-muted">About Us</a>
+                    </ul>
+                </div>
+                
+                <div class="col">
+                    <ul class="list-group">
+                        <a href="" class="text-muted">Like us on Facebook @ TalipapaUp | Online Palengke Store</a>
+                        <a href="" class="text-muted">Comments and Suggestions</a>
+                        <a href="" class="text-muted">FAQ</a>
+                    </ul>
+                </div>
+            </div>
+        </div>
+  </div> 
+</footer>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+  </body>
+</html>

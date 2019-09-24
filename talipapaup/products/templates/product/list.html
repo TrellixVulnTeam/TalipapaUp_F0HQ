@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% include "navbar.html" %}
+{% load static %}
+
+{% block content %}
+<br>
+<br>
+<br>
+<br>
+<div class='container'>
+    <div class="row">
+        <div class="col filter-form ">
+             <form method="GET">
+              {{ filter.form }}
+              <button type="submit" class='filterbtn btn-primary'>Filter</button>
+            </form>
+        </div>
+        <div class="filter-form">
+            <form class="form-inline my-2 my-lg-0 " method="get" action="{% url 'products:list_of_product' %}">
+                <input class="searchbar form-control mr-sm-2" type="text" placeholder="Search here" aria-label="Search">
+                <button type="submit" class='filterbtn btn-primary my-2 my-sm-0'>Search</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<div class = 'container'>
+        <div class = 'row justify-content-center mt-3'>
+            {% for list in filter.qs %}
+           <div class="col-lg-3 col-md-6 mb-4 ">
+                    <div class="card" style='width:230px; height:410px;'>
+                      <img src="{{ list.mainimage.url }}" class="card-img-top" alt="{{ list.name }}" width='80' height="140">
+                          <div class="list-text card-body" style="width: 15rem; height: 19rem; ">
+                                <h5 class="card-title">{{ list.name }}</h5>
+                                <p class="card-text">{{ list.preview_text }}</p>
+                              <p class="price card-text text-primary font-weight-bold">Price:     ₱{{ list.price }} per {{ list.measurement }}
+                              </p>
+                              <p class="card-text text-muted">Stall : {{ list.stall_address }}</p>
+                          </div>
+                         <div class='card-footer text-center'>
+                            <a href="{{ list.get_absolute_url }}" class="btn btn-success btn-sm" >View Product</a>
+                        </div>
+                    </div>   
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+
+{% endblock %}

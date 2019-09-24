@@ -1,0 +1,22 @@
+{% load static %}
+
+    <div class="container">
+            <div class="row">
+                <nav class="navbar navbar-light bg-light navbar-expand-md fixed-top ">
+                <div class="col-11 col-md-8">
+                    <a class="navbar-brand mb-0 h1" href="{% url 'products:homepage' %}">TalipapaUp | <em>Online Palengke Store</em></a>
+                </div>
+                <div class="col-8 col-md-5">
+                        <img src="{% static 'images/cart.png' %}" width="5%" height="5%">
+                      <a href="login/" class='authenticity'>| Log In </a>
+                      <a href="" class='authenticity'>| Sign Up</a>
+                    {% if user.is_authenticated %}
+                      <a href="{% url 'products:product_add' %}" class='authenticity'>| Add New Product</a>
+                      <a href="logout/" class='authenticity'>| Log Out</a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+</nav>
+
+    

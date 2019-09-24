@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} {{ detail.name }} {% endblock %}
+
+{% block content %}
+<br>
+<br>
+<br>
+<br>
+<div class="container">
+<div class="card mb-4" style="max-width: 600px;">
+  <div class="row no-gutters justify-content-center">
+    <div class="col-7">
+      <img src="{{ detail.mainimage.url }}" class="card-img" alt="..." width="900" height='350'>
+    </div>
+    <div class="col-5">
+      <div class="card-body">
+        <h5 class="card-title">{{ detail.name }}</h5>
+        <p class="card-text">{{ detail.detail_text }}</p>
+          <p class="price card-text text-primary font-weight-bold">Price : ₱ {{ detail.price }} per {{ detail.measurement }}</p>
+          <p class="card-text ">Stall : {{ detail.stall_address }}</p>
+          {% if user.is_authenticated %}
+            <button type="submit" class="buy btn-primary">Buy Now</button>
+            <button type="submit" class="buy btn-outline-danger">Add To Cart</button>
+          {% else %}
+            <a class="btn btn-danger btn-sm" href="login/">Log In to buy this product</a>
+          {% endif %}
+    </div>
+    </div>
+  </div>
+</div>
+</div>
+{% endblock %}

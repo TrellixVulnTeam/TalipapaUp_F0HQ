@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+{% include 'carousel.html' %}
+<br>
+
+<div class="alert alert-light" role="alert">
+  <h4 class="alert-heading">Welcome Shoppers!</h4>
+      <p>Shop your fresh goods here at <em>TalipapaUp</em>, an online palengke store where you will receive your order as fast as you order !</p>
+      <hr>
+  <p class="mb-0">Shop Now, Receive later !</p>
+</div>
+
+<div class = 'container'>
+        <div class = 'row justify-content-center mt-3'>
+            {% for preview in product|slice:":4" %}
+                 <div class="col-lg-3 col-md-6 mb-4 ">
+                    <div class="card" style='width:230px; height:410px;'>
+                      <img src="media/{{ preview.mainimage }}" class="card-img-top" alt="{{ preview.name }}" width='80' height="140">
+                          <div class="list-text card-body" style="width: 15rem; height: 19rem; ">
+                                <h5 class="card-title">{{ preview.name }}</h5>
+                                <p class="card-text">{{ preview.preview_text }}</p>
+                              <p class="price card-text text-primary font-weight-bold">Price:     ₱{{ preview.price }} per {{ preview.measurement }}
+                              </p>
+                              <p class="card-text text-muted">Stall : {{ preview.stall_address }}</p>
+                          </div>
+                         <div class='card-footer text-center'>
+                            <a href="{{ preview.get_absolute_detail }}" class="btn btn-success btn-sm" >View Product</a>
+                        </div>
+                    </div>   
+                </div>
+               {% endfor %}
+                  <div class="card text-center">
+                            <a href="{% url 'products:list_of_product' %}" class="btn btn-info btn-sm" >Show more products</a>
+                        </div> 
+        </div>
+    </div>
+{% endblock %}
